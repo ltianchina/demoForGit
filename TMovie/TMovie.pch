@@ -1,0 +1,19 @@
+//
+//  TMovie.pch
+//  TMovie
+//
+//  Created by Liming Tian on 9/28/14.
+//  Copyright (c) 2014 Liming Tian. All rights reserved.
+//
+
+#ifndef TMovie_TMovie_pch
+#define TMovie_TMovie_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIViewExt.h"
+
+#define kDeviceWidth  [UIScreen mainScreen].bounds.size.width
+#define kDeviceHeight [UIScreen mainScreen].bounds.size.height
+#endif
