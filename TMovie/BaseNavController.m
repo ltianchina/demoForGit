@@ -14,6 +14,7 @@
 
 @implementation BaseNavController
 
+#pragma -mark ViewController Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -23,6 +24,7 @@
     }
 }
 
+#pragma -mark Memory
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
