@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Liming Tian. All rights reserved.
 //
 #import "USAViewController.h"
+#import "TNetworkService.h"
+
 #define kListViewTag   101
 #define kPosterViewTag 102
 
@@ -27,10 +29,8 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+- (void)loadView
+{
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     view.backgroundColor = [UIColor blackColor];
     self.view = view;
@@ -40,6 +40,13 @@
     [self loadListView];
     
     [self loadNavItemBtn];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self requestData];
 }
 
 #pragma -mark Private Methods
@@ -113,6 +120,11 @@
     [UIView setAnimationTransition:flag ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight forView:baseView cache:YES];
     
     [UIView commitAnimations];
+}
+
+- (void)requestData
+{
+    
 }
 #pragma -mark Memory
 - (void)didReceiveMemoryWarning {

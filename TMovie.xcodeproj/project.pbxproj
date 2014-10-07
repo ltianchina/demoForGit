@@ -123,6 +123,8 @@
 		C73252DE19D6B99800CCB778 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73252DD19D6B99800CCB778 /* MainController.m */; };
 		C73D4B0B19D793990086E10F /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0A19D793990086E10F /* BaseNavController.m */; };
 		C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0F19D7A2240086E10F /* UIViewExt.m */; };
+		C7A228D919E3E72500640004 /* NorthUSA.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A228D819E3E72500640004 /* NorthUSA.json */; };
+		C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A228DC19E3E77500640004 /* TNetworkService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +269,9 @@
 		C73D4B0C19D7A0AE0086E10F /* TMovie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMovie.pch; sourceTree = "<group>"; };
 		C73D4B0E19D7A2240086E10F /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		C73D4B0F19D7A2240086E10F /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		C7A228D819E3E72500640004 /* NorthUSA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NorthUSA.json; sourceTree = "<group>"; };
+		C7A228DB19E3E77500640004 /* TNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNetworkService.h; sourceTree = "<group>"; };
+		C7A228DC19E3E77500640004 /* TNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNetworkService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +343,8 @@
 		C73251D119D6B4C800CCB778 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7A228DA19E3E73500640004 /* NetworkService */,
+				C7A228D719E3E6F300640004 /* data */,
 				C73D4B0D19D7A1F80086E10F /* uitl */,
 				C73251FC19D6B8CE00CCB778 /* images */,
 				C73251D519D6B4C800CCB778 /* AppDelegate.h */,
@@ -577,6 +584,23 @@
 			name = uitl;
 			sourceTree = "<group>";
 		};
+		C7A228D719E3E6F300640004 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				C7A228D819E3E72500640004 /* NorthUSA.json */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		C7A228DA19E3E73500640004 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				C7A228DB19E3E77500640004 /* TNetworkService.h */,
+				C7A228DC19E3E77500640004 /* TNetworkService.m */,
+			);
+			name = NetworkService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -681,6 +705,7 @@
 				C73252C019D6B8CE00CCB778 /* indexBG_home@2x.png in Resources */,
 				C732529019D6B8CE00CCB778 /* 17@2x.png in Resources */,
 				C73252BB19D6B8CE00CCB778 /* sctpxw@2x.png in Resources */,
+				C7A228D919E3E72500640004 /* NorthUSA.json in Resources */,
 				C73252B519D6B8CE00CCB778 /* news@2x.png in Resources */,
 				C732529F19D6B8CE00CCB778 /* more_select_setting@2x.png in Resources */,
 				C732528719D6B8CE00CCB778 /* tab_bg_all@2x.png in Resources */,
@@ -782,6 +807,7 @@
 				C73252D219D6B92100CCB778 /* TopViewController.m in Sources */,
 				C73252D819D6B93600CCB778 /* MoreViewController.m in Sources */,
 				C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */,
+				C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */,
 				C73252DB19D6B94000CCB778 /* CinemaViewController.m in Sources */,
 				C73252CF19D6B91400CCB778 /* USAViewController.m in Sources */,
 				C73252DE19D6B99800CCB778 /* MainController.m in Sources */,
