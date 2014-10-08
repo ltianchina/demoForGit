@@ -9,6 +9,7 @@
 #import "TNetworkService.h"
 #import "USAModel.h"
 #import "USACell.h"
+#import "PosterView.h"
 
 #define kListViewTag   101
 #define kPosterViewTag 102
@@ -37,9 +38,9 @@
     view.backgroundColor = [UIColor blackColor];
     self.view = view;
     
-    [self loadPosterView];
-    
     [self loadListView];
+    
+    [self loadPosterView];
     
     [self loadNavItemBtn];
 }
@@ -63,7 +64,7 @@
 
 - (void)loadPosterView
 {
-    _posterView = [[UIView alloc] initWithFrame:self.view.bounds];
+    _posterView = [[PosterView alloc] initWithFrame:self.view.bounds];
     _posterView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:_posterView];
 }
@@ -141,6 +142,8 @@
 - (void)refreshUI
 {
     [_listView reloadData];
+    
+    [_posterView reloadPosterData:_usaArr];
 }
 
 #pragma -mark UITableView DataSource

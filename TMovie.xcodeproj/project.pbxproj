@@ -131,6 +131,7 @@
 		C7F9A42019E4D9E600841D13 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41819E4D9E600841D13 /* SDWebImageDownloader.m */; };
 		C7F9A42119E4D9E600841D13 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41B19E4D9E600841D13 /* SDWebImageManager.m */; };
 		C7F9A42219E4D9E600841D13 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41E19E4D9E600841D13 /* UIImageView+WebCache.m */; };
+		C7F9A42919E5178A00841D13 /* PosterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A42819E5178A00841D13 /* PosterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,8 @@
 		C7F9A41C19E4D9E600841D13 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
 		C7F9A41D19E4D9E600841D13 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		C7F9A41E19E4D9E600841D13 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		C7F9A42719E5178A00841D13 /* PosterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterView.h; sourceTree = "<group>"; };
+		C7F9A42819E5178A00841D13 /* PosterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +444,8 @@
 				C7F9A41019E4D14200841D13 /* USACell.m */,
 				C7F9A40C19E4CCA700841D13 /* USAModel.h */,
 				C7F9A40D19E4CCA700841D13 /* USAModel.m */,
+				C7F9A42719E5178A00841D13 /* PosterView.h */,
+				C7F9A42819E5178A00841D13 /* PosterView.m */,
 			);
 			path = USA;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */,
 				C7F9A41F19E4D9E600841D13 /* SDImageCache.m in Sources */,
 				C73252DB19D6B94000CCB778 /* CinemaViewController.m in Sources */,
+				C7F9A42919E5178A00841D13 /* PosterView.m in Sources */,
 				C7F9A41119E4D14200841D13 /* USACell.m in Sources */,
 				C73252CF19D6B91400CCB778 /* USAViewController.m in Sources */,
 				C7F9A42019E4D9E600841D13 /* SDWebImageDownloader.m in Sources */,

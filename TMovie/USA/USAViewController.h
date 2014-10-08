@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 @class USAModel;
+@class PosterView;
 
 @interface USAViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 {
 @private
-    UITableView *_listView;
-    UIView      *_posterView;
-    USAModel    *_usaModel;
-    NSMutableArray *_usaArr;
+    UITableView     *_listView;
+    PosterView      *_posterView;
+    USAModel        *_usaModel;
+    NSMutableArray  *_usaArr;
 }
 @end
