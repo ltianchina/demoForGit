@@ -8,6 +8,7 @@
 
 #import "USACell.h"
 #import "USAModel.h"
+#import "RatingView.h"
 @implementation USACell
 
 - (void)awakeFromNib {
@@ -40,7 +41,7 @@
     _yearLabel.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:_yearLabel];
     
-    _ratingView = [[UIView alloc] initWithFrame:CGRectZero];
+    _ratingView = [[RatingView alloc] initWithFrame:CGRectZero];
     _ratingView.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:_ratingView];
 }
@@ -61,7 +62,8 @@
     _yearLabel.frame = CGRectMake(_titleLabel.left, _titleLabel.bottom, 90, 40);
     _yearLabel.text = [NSString stringWithFormat:@"year:%@",[self.usaCellModel.subject objectForKey:@"year"]];
     
-    _ratingView.frame = CGRectMake(_yearLabel.right, _yearLabel.top, 90, 40);
+    _ratingView.frame = CGRectMake(_yearLabel.right, _yearLabel.top+10, 90, 40);
+    _ratingView.ratingScore = [[[self.usaCellModel.subject objectForKey:@"rating"] objectForKey:@"average"] floatValue];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

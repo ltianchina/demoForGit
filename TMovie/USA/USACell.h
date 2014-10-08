@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 @class USAModel;
+@class RatingView;
 @interface USACell : UITableViewCell
 {
 @private
     UIImageView *_imageView;
     UILabel     *_titleLabel;
     UILabel     *_yearLabel;
-    UIView      *_ratingView;
+    RatingView  *_ratingView;
 }
 
 @property (nonatomic, retain) USAModel *usaCellModel;

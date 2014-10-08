@@ -131,6 +131,7 @@
 		C7F9A42019E4D9E600841D13 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41819E4D9E600841D13 /* SDWebImageDownloader.m */; };
 		C7F9A42119E4D9E600841D13 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41B19E4D9E600841D13 /* SDWebImageManager.m */; };
 		C7F9A42219E4D9E600841D13 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41E19E4D9E600841D13 /* UIImageView+WebCache.m */; };
+		C7F9A42519E4E1A400841D13 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A42419E4E1A400841D13 /* RatingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,8 @@
 		C7F9A41C19E4D9E600841D13 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
 		C7F9A41D19E4D9E600841D13 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		C7F9A41E19E4D9E600841D13 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		C7F9A42319E4E1A400841D13 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		C7F9A42419E4E1A400841D13 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +368,7 @@
 		C73251D119D6B4C800CCB778 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7F9A42619E4E1AD00841D13 /* RatingView */,
 				C7F9A41219E4D9E600841D13 /* SDWebImage */,
 				C7A228DA19E3E73500640004 /* NetworkService */,
 				C7A228D719E3E6F300640004 /* data */,
@@ -647,6 +651,15 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		C7F9A42619E4E1AD00841D13 /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9A42319E4E1A400841D13 /* RatingView.h */,
+				C7F9A42419E4E1A400841D13 /* RatingView.m */,
+			);
+			name = RatingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -855,6 +868,7 @@
 				C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */,
 				C7F9A42119E4D9E600841D13 /* SDWebImageManager.m in Sources */,
 				C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */,
+				C7F9A42519E4E1A400841D13 /* RatingView.m in Sources */,
 				C7F9A41F19E4D9E600841D13 /* SDImageCache.m in Sources */,
 				C73252DB19D6B94000CCB778 /* CinemaViewController.m in Sources */,
 				C7F9A41119E4D14200841D13 /* USACell.m in Sources */,
