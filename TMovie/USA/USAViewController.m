@@ -7,6 +7,8 @@
 //
 #import "USAViewController.h"
 #import "TNetworkService.h"
+#import "USAModel.h"
+#import "USACell.h"
 
 #define kListViewTag   101
 #define kPosterViewTag 102
@@ -46,7 +48,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self requestData];
+    [self performSelector:@selector(requestData) withObject:nil afterDelay:0.5];
 }
 
 #pragma -mark Private Methods
@@ -54,6 +56,8 @@
 {
     _listView = [[UITableView alloc] initWithFrame:self.view.bounds];
     _listView.backgroundColor = [UIColor purpleColor];
+    _listView.dataSource = self;
+    _listView.delegate = self;
     [self.view addSubview:_listView];
 }
 
@@ -124,7 +128,45 @@
 
 - (void)requestData
 {
+    NSArray *usaData = [TNetworkService usaData];
+    _usaArr = [[NSMutableArray alloc] initWithCapacity:usaData.count];
+    for (id data in usaData) {
+        _usaModel = [[USAModel alloc] init];
+        _usaModel.subject = [data objectForKey:@"subject"];
+        [_usaArr addObject:_usaModel];
+    }
+    [self refreshUI];
+}
+
+- (void)refreshUI
+{
+    [_listView reloadData];
+}
+
+#pragma -mark UITableView DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_usaArr count];
+}
+
+#pragma -mark UITableView DataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"cell";
+    USACell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
+    if (cell == nil) {
+        cell = [[USACell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.usaCellModel = _usaArr[indexPath.row];
+    return cell;
+}
+
+#pragma -mark UITableView Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 #pragma -mark Memory
 - (void)didReceiveMemoryWarning {
@@ -137,6 +179,7 @@
 
 - (void)dealloc
 {
+    [_usaModel release], _usaModel = nil;
     [_listView release], _listView = nil;
     [_posterView release], _posterView = nil;
     
