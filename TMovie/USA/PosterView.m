@@ -7,6 +7,8 @@
 //
 
 #import "PosterView.h"
+#import "USAModel.h"
+#import "RatingView.h"
 
 @implementation PosterView
 
@@ -37,37 +39,97 @@
 - (void)initContentView
 {
     _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, _headerView.bottom, kDeviceWidth,self.height-_headerView.height-_footerView.height-140)];
-    _contentView.backgroundColor = [UIColor purpleColor];
     [self addSubview:_contentView];
     
     _conentScorllView = [[UIScrollView alloc] initWithFrame:CGRectMake(40, 40, 240, 230)];
     _conentScorllView.pagingEnabled = YES;
     _conentScorllView.showsHorizontalScrollIndicator = NO;
     _conentScorllView.clipsToBounds = NO;
-    _conentScorllView.backgroundColor = [UIColor redColor];
+    _conentScorllView.delegate = self;
     [_contentView addSubview:_conentScorllView];
 }
 
 - (void)initFooterView
 {
     _footerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, _contentView.bottom, kDeviceWidth, 35)];
-    _footerView.backgroundColor = [UIColor redColor];
+    _footerView.image = [UIImage imageNamed:@"poster_title_home"];
     [self addSubview:_footerView];
     
+    _footerTitle = [[UILabel alloc] initWithFrame:_footerView.bounds];
+    _footerTitle.textColor = [UIColor whiteColor];
+    _footerTitle.textAlignment = NSTextAlignmentCenter;
+    [_footerView addSubview:_footerTitle];
 }
 
 - (void)setContentSize
 {
-    NSArray *colors = @[[UIColor yellowColor],[UIColor blueColor],[UIColor yellowColor]];
+    _footerTitle.text = [[self.scrollData[0] subject] objectForKey:@"title"];
     int x = 0;
     for (int i = 0; i < self.scrollData.count; i++) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(20+x, 20, 200, 200)];
-        view.backgroundColor = colors[i%3];
-        [_conentScorllView addSubview:view];
+        USAModel *usaModel = self.scrollData[i];
+
+        //flipBaseView
+        UIView *flipBaseView = [[UIView alloc] initWithFrame:CGRectMake(20+x, 20, 200, 200)];
+        [_conentScorllView addSubview:flipBaseView];
+        [flipBaseView release];
+        
+        //add gesture
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(flipView:)];
+        [flipBaseView addGestureRecognizer:singleTap];
+        [singleTap release];
+        
+        //detailView
+        UIView *detailView = [[UIView alloc] initWithFrame:flipBaseView.bounds];
+        detailView.backgroundColor = [UIColor grayColor];
+        [flipBaseView addSubview:detailView];
+        [detailView release];
+        //detail image
+        UIImageView *detailImg = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 60)];
+        NSString *detailImgURL = [[[usaModel subject] objectForKey:@"images"] objectForKey:@"medium"];
+        [detailImg setImageWithURL:[NSURL URLWithString:detailImgURL]];
+        [detailView addSubview:detailImg];
+        [detailImg release];
+        
+        UILabel *cnTitle = [[UILabel alloc] initWithFrame:CGRectMake(detailImg.right, detailImg.top, 120, 20)];
+        cnTitle.text = [NSString stringWithFormat:@"中文:%@",[[usaModel subject] objectForKey:@"title"]];
+        cnTitle.font = [UIFont boldSystemFontOfSize:12];
+        [detailView addSubview:cnTitle];
+        [cnTitle release];
+        
+        RatingView *ratingView = [[RatingView alloc] initWithFrame:CGRectMake(30, detailImg.bottom+10, flipBaseView.width, 20)];
+        ratingView.style= kSmallStyle;
+        ratingView.ratingScore = [[[[usaModel subject] objectForKey:@"rating"] objectForKey:@"average"] floatValue];
+        [detailView addSubview:ratingView];
+        [ratingView release];
+        
+        //imageView
+        UIImageView *view = [[UIImageView alloc] initWithFrame:flipBaseView.bounds];
+        NSString *imgURL = [[[usaModel subject] objectForKey:@"images"] objectForKey:@"large"];
+        [view setImageWithURL:[NSURL URLWithString:imgURL]];
+        [flipBaseView addSubview:view];
+        [view release];
+        
         x += _conentScorllView.frame.size.width;
     }
     
     _conentScorllView.contentSize = CGSizeMake(x, _conentScorllView.height);
+}
+
+#pragma -mark Target Actions
+- (void)flipView:(UITapGestureRecognizer *)tap
+{
+    UIView *flipView = [tap view];
+    [UIView beginAnimations: nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [flipView exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+    if (flipView.tag == 0) {
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:flipView cache:YES];
+        flipView.tag = 1;
+    } else {
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:flipView cache:YES];
+        flipView.tag = 0;
+    }
+    [UIView commitAnimations];
 }
 #pragma -mark Public Methods
 - (void)reloadPosterData:(NSArray *)data
@@ -75,5 +137,25 @@
     self.scrollData = data;
     
     [self setContentSize];
+}
+
+#pragma -mark UIScrollView Delegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    int index = scrollView.contentOffset.x / _conentScorllView.width;
+    
+    USAModel *usaModel = self.scrollData[index];
+    _footerTitle.text = [usaModel.subject objectForKey:@"title"];
+}
+#pragma -mark Memory
+- (void)dealloc
+{
+    [_headerView release], _headerView = nil;
+    [_contentView release], _contentView = nil;
+    [_conentScorllView release], _conentScorllView = nil;
+    [_footerView release], _footerView = nil;
+    [_footerTitle release], _footerTitle = nil;
+
+    [super dealloc];
 }
 @end

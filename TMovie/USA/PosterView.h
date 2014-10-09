@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PosterView : UIView
+@interface PosterView : UIView <UIScrollViewDelegate>
 {
 @private
     UIImageView  *_headerView;
@@ -17,6 +17,7 @@
     UIScrollView *_conentScorllView;
     
     UIImageView  *_footerView;
+    UILabel      *_footerTitle;
 }
 
 @property (nonatomic, retain) NSArray *scrollData;

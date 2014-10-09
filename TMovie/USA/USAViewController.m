@@ -56,7 +56,7 @@
 - (void)loadListView
 {
     _listView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    _listView.backgroundColor = [UIColor purpleColor];
+    _listView.backgroundColor = [UIColor blackColor];
     _listView.dataSource = self;
     _listView.delegate = self;
     [self.view addSubview:_listView];
@@ -65,7 +65,7 @@
 - (void)loadPosterView
 {
     _posterView = [[PosterView alloc] initWithFrame:self.view.bounds];
-    _posterView.backgroundColor = [UIColor blueColor];
+    _posterView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_posterView];
 }
 

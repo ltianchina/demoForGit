@@ -123,6 +123,7 @@
 		C73252DE19D6B99800CCB778 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73252DD19D6B99800CCB778 /* MainController.m */; };
 		C73D4B0B19D793990086E10F /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0A19D793990086E10F /* BaseNavController.m */; };
 		C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0F19D7A2240086E10F /* UIViewExt.m */; };
+		C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74EF34E19E630E10016BBB5 /* RatingView.m */; };
 		C7A228D919E3E72500640004 /* NorthUSA.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A228D819E3E72500640004 /* NorthUSA.json */; };
 		C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A228DC19E3E77500640004 /* TNetworkService.m */; };
 		C7F9A40E19E4CCA700841D13 /* USAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A40D19E4CCA700841D13 /* USAModel.m */; };
@@ -276,6 +277,8 @@
 		C73D4B0C19D7A0AE0086E10F /* TMovie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMovie.pch; sourceTree = "<group>"; };
 		C73D4B0E19D7A2240086E10F /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		C73D4B0F19D7A2240086E10F /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		C74EF34D19E630E10016BBB5 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		C74EF34E19E630E10016BBB5 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 		C7A228D819E3E72500640004 /* NorthUSA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NorthUSA.json; sourceTree = "<group>"; };
 		C7A228DB19E3E77500640004 /* TNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNetworkService.h; sourceTree = "<group>"; };
 		C7A228DC19E3E77500640004 /* TNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNetworkService.m; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 				C7F9A40D19E4CCA700841D13 /* USAModel.m */,
 				C7F9A42719E5178A00841D13 /* PosterView.h */,
 				C7F9A42819E5178A00841D13 /* PosterView.m */,
+				C74EF34D19E630E10016BBB5 /* RatingView.h */,
+				C74EF34E19E630E10016BBB5 /* RatingView.m */,
 			);
 			path = USA;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				C73252D219D6B92100CCB778 /* TopViewController.m in Sources */,
 				C73252D819D6B93600CCB778 /* MoreViewController.m in Sources */,
 				C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */,
+				C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */,
 				C7F9A42119E4D9E600841D13 /* SDWebImageManager.m in Sources */,
 				C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */,
 				C7F9A41F19E4D9E600841D13 /* SDImageCache.m in Sources */,
