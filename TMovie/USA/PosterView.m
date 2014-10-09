@@ -10,6 +10,7 @@
 #import "USAModel.h"
 #import "RatingView.h"
 
+#define kHiddenHeaderViewHeight 100
 @implementation PosterView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -23,22 +24,33 @@
         [self initContentView];
         
         [self initFooterView];
+        
+        [self bringSubviewToFront:_headerView];
     }
     
     return self;
 }
 
+
 #pragma -mark Private Methods
 - (void)initHeaderView
 {
-    _headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 25)];
-    _headerView.backgroundColor = [UIColor redColor];
+    _headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -kHiddenHeaderViewHeight, kDeviceWidth, 25+kHiddenHeaderViewHeight)];
+    UIImage *originImg = [UIImage imageNamed:@"indexBG_home"];
+    UIImage *new = [originImg stretchableImageWithLeftCapWidth:_headerView.width/2 topCapHeight:2];
+    _headerView.image = new;
+    _headerView.userInteractionEnabled = YES;
     [self addSubview:_headerView];
+    
+    _pullBtn = [[UIButton alloc] initWithFrame:CGRectMake(_headerView.width/2, kHiddenHeaderViewHeight+2, 13, 13)];
+    [_pullBtn setImage:[UIImage imageNamed:@"down_home"] forState:UIControlStateNormal];
+    [_pullBtn addTarget:self action:@selector(pullBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView addSubview:_pullBtn];
 }
 
 - (void)initContentView
 {
-    _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, _headerView.bottom, kDeviceWidth,self.height-_headerView.height-_footerView.height-140)];
+    _contentView = [[UIView alloc] initWithFrame:CGRectMake(0,25, kDeviceWidth,self.height-25-_footerView.height-140)];
     [self addSubview:_contentView];
     
     _conentScorllView = [[UIScrollView alloc] initWithFrame:CGRectMake(40, 40, 240, 230)];
@@ -61,6 +73,17 @@
     [_footerView addSubview:_footerTitle];
 }
 
+- (void)initMaskView
+{
+    _maskView = [[UIView alloc] initWithFrame:self.bounds];
+    _maskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pullBtn:)];
+    [_maskView addGestureRecognizer:tap];
+    [tap release];
+    
+    [self insertSubview:_maskView aboveSubview:_contentView];
+}
 - (void)setContentSize
 {
     _footerTitle.text = [[self.scrollData[0] subject] objectForKey:@"title"];
@@ -131,6 +154,22 @@
     }
     [UIView commitAnimations];
 }
+
+- (void)pullBtn:(UIButton *)button
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    if (_headerView.top == 0) {
+        _headerView.top = -100;
+        [_pullBtn setImage:[UIImage imageNamed:@"down_home"] forState:UIControlStateNormal];
+        [_maskView removeFromSuperview];
+    } else {
+        _headerView.top = 0;
+        [_pullBtn setImage:[UIImage imageNamed:@"up_home"] forState:UIControlStateNormal];
+        [self initMaskView];
+    }
+    [UIView commitAnimations];
+}
 #pragma -mark Public Methods
 - (void)reloadPosterData:(NSArray *)data
 {
@@ -150,6 +189,8 @@
 #pragma -mark Memory
 - (void)dealloc
 {
+    [_maskView release], _maskView = nil;
+    [_pullBtn release], _pullBtn = nil;
     [_headerView release], _headerView = nil;
     [_contentView release], _contentView = nil;
     [_conentScorllView release], _conentScorllView = nil;

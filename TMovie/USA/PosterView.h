@@ -12,12 +12,15 @@
 {
 @private
     UIImageView  *_headerView;
+    UIButton     *_pullBtn;
     
     UIView       *_contentView;
     UIScrollView *_conentScorllView;
     
     UIImageView  *_footerView;
     UILabel      *_footerTitle;
+    
+    UIView       *_maskView;
 }
 
 @property (nonatomic, retain) NSArray *scrollData;

@@ -37,6 +37,7 @@
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     view.backgroundColor = [UIColor blackColor];
     self.view = view;
+    [view release];
     
     [self loadListView];
     
@@ -159,7 +160,7 @@
     USACell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[USACell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[[USACell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
     
     cell.usaCellModel = _usaArr[indexPath.row];
