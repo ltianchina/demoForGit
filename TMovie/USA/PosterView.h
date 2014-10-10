@@ -12,6 +12,7 @@
 {
 @private
     UIImageView  *_headerView;
+    UIScrollView *_headerScrollView;
     UIButton     *_pullBtn;
     
     UIView       *_contentView;

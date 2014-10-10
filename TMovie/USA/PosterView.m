@@ -46,6 +46,12 @@
     [_pullBtn setImage:[UIImage imageNamed:@"down_home"] forState:UIControlStateNormal];
     [_pullBtn addTarget:self action:@selector(pullBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_headerView addSubview:_pullBtn];
+    
+    _headerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, kHiddenHeaderViewHeight)];
+    _headerScrollView.delegate = self;
+    _headerScrollView.decelerationRate = 0.1;
+    _headerScrollView.showsHorizontalScrollIndicator = NO;
+    [_headerView addSubview:_headerScrollView];
 }
 
 - (void)initContentView
@@ -138,6 +144,33 @@
     _conentScorllView.contentSize = CGSizeMake(x, _conentScorllView.height);
 }
 
+- (void)downloadSmallImg
+{
+    int x = 0;
+    for (int index = 0; index < self.scrollData.count; index++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(130+x, 5, 60, kHiddenHeaderViewHeight-10)];
+        USAModel *usaModel = self.scrollData[index];
+        NSString *urlString = [[usaModel.subject objectForKey:@"images"] objectForKey:@"medium"];
+        [imageView setImageWithURL:[NSURL URLWithString:urlString]];
+        [_headerScrollView addSubview:imageView];
+        [imageView release];
+        
+        x += 70;
+    }
+    
+    _headerScrollView.contentSize = CGSizeMake(130*2+(self.scrollData.count)*70-10, kHiddenHeaderViewHeight);
+}
+
+- (NSInteger)setContentOffset
+{
+    NSInteger index = floor((_headerScrollView.contentOffset.x - 35) / 70 + 1);
+    
+    [_headerScrollView setContentOffset:CGPointMake(70 * index, 0) animated:YES];
+    [_conentScorllView setContentOffset:CGPointMake(240 * index, 0) animated:YES];
+    
+    return index;
+}
+
 #pragma -mark Target Actions
 - (void)flipView:(UITapGestureRecognizer *)tap
 {
@@ -167,6 +200,9 @@
         _headerView.top = 0;
         [_pullBtn setImage:[UIImage imageNamed:@"up_home"] forState:UIControlStateNormal];
         [self initMaskView];
+        if ((_headerScrollView.subviews.count == 0) || (_headerScrollView.subviews.count == 1)) {
+            [self downloadSmallImg];
+        }
     }
     [UIView commitAnimations];
 }
@@ -181,14 +217,30 @@
 #pragma -mark UIScrollView Delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    int index = scrollView.contentOffset.x / _conentScorllView.width;
-    
+    int index = 0;
+    if (scrollView == _headerScrollView) {
+        index = [self setContentOffset];
+    } else {
+        index = scrollView.contentOffset.x / _conentScorllView.width;
+        [_headerScrollView setContentOffset:CGPointMake(70 * index, 0) animated:YES];
+    }
     USAModel *usaModel = self.scrollData[index];
     _footerTitle.text = [usaModel.subject objectForKey:@"title"];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate) {
+        NSInteger index = floor((_headerScrollView.contentOffset.x - 35) / 70 + 1);
+        
+        [_headerScrollView setContentOffset:CGPointMake(70 * index, 0) animated:YES];
+        [_conentScorllView setContentOffset:CGPointMake(240 * index, 0) animated:YES];
+    }
 }
 #pragma -mark Memory
 - (void)dealloc
 {
+    [_headerScrollView release], _headerScrollView = nil;
     [_maskView release], _maskView = nil;
     [_pullBtn release], _pullBtn = nil;
     [_headerView release], _headerView = nil;
