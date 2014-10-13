@@ -150,14 +150,14 @@
     UIImageView *imageType = (UIImageView *)[cell.contentView viewWithTag:103];
     int type = [newsModel.type intValue];
     
-    if (type == 0) {
+    if (type == kEmptyImageView) {
         imageType.hidden = YES;
         detail.left = imageView.right+5;
-    } else if (type == 1) {
+    } else if (type == kImageView) {
         imageType.hidden = NO;
         imageType.image = [UIImage imageNamed:@"sctpxw"];
         detail.left = imageType.right+5;
-    } else if (type == 2) {
+    } else if (type == kMovieView) {
         imageType.hidden = NO;
         imageType.image = [UIImage imageNamed:@"scspxw"];
         detail.left = imageType.right+5;

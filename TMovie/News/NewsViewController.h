@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum kViewType{
+    kEmptyImageView = 0,
+    kImageView      = 1,
+    kMovieView      = 2
+}kViewType;
+
 @interface NewsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 {
 @private
