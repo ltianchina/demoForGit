@@ -11,4 +11,6 @@
 @interface TNetworkService : NSObject
 
 + (id)usaData;
+
++ (id)newsData;
 @end

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsViewController : UIViewController
-
+@interface NewsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+{
+@private
+    UITableView    *_newsTableView;
+    
+    NSMutableArray *_newsDataArr;
+}
 @end

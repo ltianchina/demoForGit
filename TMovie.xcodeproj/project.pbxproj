@@ -124,6 +124,9 @@
 		C73D4B0B19D793990086E10F /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0A19D793990086E10F /* BaseNavController.m */; };
 		C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0F19D7A2240086E10F /* UIViewExt.m */; };
 		C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74EF34E19E630E10016BBB5 /* RatingView.m */; };
+		C76884D219EB75B3003F5C80 /* movie_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D019EB75B3003F5C80 /* movie_list.json */; };
+		C76884D319EB75B3003F5C80 /* news_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D119EB75B3003F5C80 /* news_list.json */; };
+		C76884D619EB8096003F5C80 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76884D519EB8096003F5C80 /* NewsModel.m */; };
 		C7A228D919E3E72500640004 /* NorthUSA.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A228D819E3E72500640004 /* NorthUSA.json */; };
 		C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A228DC19E3E77500640004 /* TNetworkService.m */; };
 		C7F9A40E19E4CCA700841D13 /* USAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A40D19E4CCA700841D13 /* USAModel.m */; };
@@ -279,6 +282,10 @@
 		C73D4B0F19D7A2240086E10F /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		C74EF34D19E630E10016BBB5 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
 		C74EF34E19E630E10016BBB5 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
+		C76884D019EB75B3003F5C80 /* movie_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_list.json; sourceTree = "<group>"; };
+		C76884D119EB75B3003F5C80 /* news_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_list.json; sourceTree = "<group>"; };
+		C76884D419EB8096003F5C80 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		C76884D519EB8096003F5C80 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		C7A228D819E3E72500640004 /* NorthUSA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NorthUSA.json; sourceTree = "<group>"; };
 		C7A228DB19E3E77500640004 /* TNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNetworkService.h; sourceTree = "<group>"; };
 		C7A228DC19E3E77500640004 /* TNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNetworkService.m; sourceTree = "<group>"; };
@@ -353,8 +360,8 @@
 			children = (
 				C73251F719D6B8BC00CCB778 /* Cinema */,
 				C73251F819D6B8BC00CCB778 /* More */,
-				C73251F919D6B8BC00CCB778 /* News */,
 				C73251FA19D6B8BC00CCB778 /* Top */,
+				C73251F919D6B8BC00CCB778 /* News */,
 				C73251FB19D6B8BC00CCB778 /* USA */,
 				C73251DE19D6B4C900CCB778 /* Images.xcassets */,
 				C73252DC19D6B99800CCB778 /* MainController.h */,
@@ -425,6 +432,8 @@
 			children = (
 				C73252D319D6B92D00CCB778 /* NewsViewController.h */,
 				C73252D419D6B92D00CCB778 /* NewsViewController.m */,
+				C76884D419EB8096003F5C80 /* NewsModel.h */,
+				C76884D519EB8096003F5C80 /* NewsModel.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -625,6 +634,8 @@
 			isa = PBXGroup;
 			children = (
 				C7A228D819E3E72500640004 /* NorthUSA.json */,
+				C76884D019EB75B3003F5C80 /* movie_list.json */,
+				C76884D119EB75B3003F5C80 /* news_list.json */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -753,6 +764,7 @@
 				C732528819D6B8CE00CCB778 /* yellow@2x.png in Resources */,
 				C732527819D6B8CE00CCB778 /* ypf_on@2x.png in Resources */,
 				C732528A19D6B8CE00CCB778 /* 11@2x.png in Resources */,
+				C76884D319EB75B3003F5C80 /* news_list.json in Resources */,
 				C73252B419D6B8CE00CCB778 /* news.png in Resources */,
 				C73252B219D6B8CE00CCB778 /* sz_on@2x.png in Resources */,
 				C732528219D6B8CE00CCB778 /* selectTabbar_bg_all.png in Resources */,
@@ -794,6 +806,7 @@
 				C73252BD19D6B8CE00CCB778 /* cell_bg_home.tiff in Resources */,
 				C73252B819D6B8CE00CCB778 /* scspxw.png in Resources */,
 				C73252AD19D6B8CE00CCB778 /* ss_on.png in Resources */,
+				C76884D219EB75B3003F5C80 /* movie_list.json in Resources */,
 				C73252B319D6B8CE00CCB778 /* backItem@2x.png in Resources */,
 				C73252AF19D6B8CE00CCB778 /* sz.png in Resources */,
 				C732529119D6B8CE00CCB778 /* 18@2x.png in Resources */,
@@ -873,6 +886,7 @@
 				C73252CF19D6B91400CCB778 /* USAViewController.m in Sources */,
 				C7F9A42019E4D9E600841D13 /* SDWebImageDownloader.m in Sources */,
 				C73252DE19D6B99800CCB778 /* MainController.m in Sources */,
+				C76884D619EB8096003F5C80 /* NewsModel.m in Sources */,
 				C73252D519D6B92D00CCB778 /* NewsViewController.m in Sources */,
 				C726729619D7DF7D008A6AA9 /* ItemView.m in Sources */,
 				C73251D719D6B4C800CCB778 /* AppDelegate.m in Sources */,

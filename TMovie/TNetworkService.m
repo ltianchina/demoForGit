@@ -25,4 +25,9 @@
 {
     return [[self parserData:@"NorthUSA.json"] objectForKey:@"subjects"];
 }
+
++ (id)newsData
+{
+    return [self parserData:@"news_list.json"];
+}
 @end
