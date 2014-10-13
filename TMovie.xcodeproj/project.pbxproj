@@ -127,6 +127,7 @@
 		C76884D219EB75B3003F5C80 /* movie_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D019EB75B3003F5C80 /* movie_list.json */; };
 		C76884D319EB75B3003F5C80 /* news_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D119EB75B3003F5C80 /* news_list.json */; };
 		C76884D619EB8096003F5C80 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76884D519EB8096003F5C80 /* NewsModel.m */; };
+		C76884D919EBD859003F5C80 /* TopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76884D819EBD859003F5C80 /* TopModel.m */; };
 		C7A228D919E3E72500640004 /* NorthUSA.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A228D819E3E72500640004 /* NorthUSA.json */; };
 		C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A228DC19E3E77500640004 /* TNetworkService.m */; };
 		C7F9A40E19E4CCA700841D13 /* USAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A40D19E4CCA700841D13 /* USAModel.m */; };
@@ -286,6 +287,8 @@
 		C76884D119EB75B3003F5C80 /* news_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_list.json; sourceTree = "<group>"; };
 		C76884D419EB8096003F5C80 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		C76884D519EB8096003F5C80 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		C76884D719EBD859003F5C80 /* TopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopModel.h; sourceTree = "<group>"; };
+		C76884D819EBD859003F5C80 /* TopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopModel.m; sourceTree = "<group>"; };
 		C7A228D819E3E72500640004 /* NorthUSA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NorthUSA.json; sourceTree = "<group>"; };
 		C7A228DB19E3E77500640004 /* TNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNetworkService.h; sourceTree = "<group>"; };
 		C7A228DC19E3E77500640004 /* TNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNetworkService.m; sourceTree = "<group>"; };
@@ -443,6 +446,8 @@
 			children = (
 				C73252D019D6B92100CCB778 /* TopViewController.h */,
 				C73252D119D6B92100CCB778 /* TopViewController.m */,
+				C76884D719EBD859003F5C80 /* TopModel.h */,
+				C76884D819EBD859003F5C80 /* TopModel.m */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -892,6 +897,7 @@
 				C73251D719D6B4C800CCB778 /* AppDelegate.m in Sources */,
 				C7F9A42219E4D9E600841D13 /* UIImageView+WebCache.m in Sources */,
 				C73251D419D6B4C800CCB778 /* main.m in Sources */,
+				C76884D919EBD859003F5C80 /* TopModel.m in Sources */,
 				C7F9A40E19E4CCA700841D13 /* USAModel.m in Sources */,
 				C73D4B0B19D793990086E10F /* BaseNavController.m in Sources */,
 			);

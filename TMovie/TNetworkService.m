@@ -30,4 +30,9 @@
 {
     return [self parserData:@"news_list.json"];
 }
+
++ (id)topData
+{
+    return [[self parserData:@"movie_list.json"] objectForKey:@"entries"];
+}
 @end

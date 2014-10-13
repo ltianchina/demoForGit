@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopViewController : UIViewController
-
+@interface TopViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+{
+@private
+    UITableView *_topTableView;
+    NSMutableArray *_topDataArr;
+}
 @end

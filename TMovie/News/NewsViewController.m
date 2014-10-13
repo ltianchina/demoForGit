@@ -103,7 +103,6 @@
     return [_newsDataArr count]-1;
 }
 
-#pragma -mark UITableView DataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cell";

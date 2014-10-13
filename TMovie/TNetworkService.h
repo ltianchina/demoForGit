@@ -13,4 +13,7 @@
 + (id)usaData;
 
 + (id)newsData;
+
++ (id)topData;
+
 @end
