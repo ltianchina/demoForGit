@@ -33,6 +33,7 @@
 {
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.view = view;
+    [view release];
     
     _topTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight-20-65) style:UITableViewStylePlain];
     _topTableView.delegate = self;
@@ -79,6 +80,7 @@
         [temp addObject:topModel];
     }
     
+    [topDataArr release];
     [self refreshUI];
 }
 

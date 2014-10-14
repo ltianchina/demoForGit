@@ -71,4 +71,11 @@
         }
     }
 }
+
+#pragma -mark Memory
+- (void)dealloc
+{
+    self.imageArray = nil;
+    [super dealloc];
+}
 @end
