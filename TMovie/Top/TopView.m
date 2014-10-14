@@ -25,6 +25,7 @@
     return self;
 }
 
+#pragma -mark Private Methods
 - (void)initSubViews
 {
     _itemView = [[ItemView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height - 20)];
@@ -37,6 +38,7 @@
     [self addSubview:_ratingView];
 }
 
+#pragma -mark Setter Method
 - (void)setTopModel:(TopModel *)topModel
 {
     if (_topModel != topModel) {
@@ -51,6 +53,8 @@
         _ratingView.ratingScore = [self.topModel.rating integerValue];
     }
 }
+
+#pragma -mark Memory
 - (void)dealloc
 {
     [_itemView release], _itemView = nil;
