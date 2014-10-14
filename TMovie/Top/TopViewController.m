@@ -9,6 +9,7 @@
 #import "TopViewController.h"
 #import "TNetworkService.h"
 #import "TopModel.h"
+#import "TopCell.h"
 
 @interface TopViewController ()
 
@@ -51,15 +52,27 @@
 - (void)requestData
 {
     NSArray *data = [TNetworkService topData];
-    _topDataArr = [[NSMutableArray alloc] initWithCapacity:data.count];
+    NSMutableArray *topDataArr = [[NSMutableArray alloc] initWithCapacity:data.count];
+    
+    for (id content in data) {
+        TopModel *topModel = [[TopModel alloc] init];
+        topModel.id = [content objectForKey:@"id"];
+        topModel.title = [content objectForKey:@"title"];
+        topModel.images = [content objectForKey:@"images"];
+        topModel.rating = [content objectForKey:@"rating"];
+        
+        [topDataArr addObject:topModel];
+        [topModel release];
+    }
     
     NSMutableArray *temp = nil;
     
-    for (int index = 0; index < data.count; index++) {
-        TopModel *topModel = data[index];
+    _rowArray = [[NSMutableArray alloc] init];
+    for (int index = 0; index < topDataArr.count; index++) {
+        TopModel *topModel = topDataArr[index];
         if (index %3 == 0) {
             temp = [[NSMutableArray alloc] init];
-            [_topDataArr addObject:temp];
+            [_rowArray addObject:temp];
             [temp release];
         }
         
@@ -77,19 +90,19 @@
 #pragma -mark UITableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_topDataArr count];
+    return [_rowArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    TopCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[[TopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
- 
-    cell.textLabel.text = @"test";
+    
+    cell.imageArray = _rowArray[indexPath.row];
 
     return cell;
 }
@@ -102,5 +115,10 @@
     }
 }
 
+- (void)dealloc
+{
+    [_rowArray release], _rowArray = nil;
+    [super dealloc];
+}
 
 @end

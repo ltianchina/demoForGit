@@ -12,6 +12,6 @@
 {
 @private
     UITableView *_topTableView;
-    NSMutableArray *_topDataArr;
+    NSMutableArray *_rowArray;
 }
 @end

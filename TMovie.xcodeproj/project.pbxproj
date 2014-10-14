@@ -130,6 +130,8 @@
 		C76884D919EBD859003F5C80 /* TopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76884D819EBD859003F5C80 /* TopModel.m */; };
 		C7A228D919E3E72500640004 /* NorthUSA.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A228D819E3E72500640004 /* NorthUSA.json */; };
 		C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A228DC19E3E77500640004 /* TNetworkService.m */; };
+		C7F651B819ECBAC4003508F7 /* TopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F651B719ECBAC4003508F7 /* TopCell.m */; };
+		C7F651BB19ECEFF5003508F7 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F651BA19ECEFF5003508F7 /* TopView.m */; };
 		C7F9A40E19E4CCA700841D13 /* USAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A40D19E4CCA700841D13 /* USAModel.m */; };
 		C7F9A41119E4D14200841D13 /* USACell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41019E4D14200841D13 /* USACell.m */; };
 		C7F9A41F19E4D9E600841D13 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41419E4D9E600841D13 /* SDImageCache.m */; };
@@ -292,6 +294,10 @@
 		C7A228D819E3E72500640004 /* NorthUSA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NorthUSA.json; sourceTree = "<group>"; };
 		C7A228DB19E3E77500640004 /* TNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNetworkService.h; sourceTree = "<group>"; };
 		C7A228DC19E3E77500640004 /* TNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNetworkService.m; sourceTree = "<group>"; };
+		C7F651B619ECBAC4003508F7 /* TopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopCell.h; sourceTree = "<group>"; };
+		C7F651B719ECBAC4003508F7 /* TopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopCell.m; sourceTree = "<group>"; };
+		C7F651B919ECEFF5003508F7 /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
+		C7F651BA19ECEFF5003508F7 /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
 		C7F9A40C19E4CCA700841D13 /* USAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAModel.h; sourceTree = "<group>"; };
 		C7F9A40D19E4CCA700841D13 /* USAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAModel.m; sourceTree = "<group>"; };
 		C7F9A40F19E4D14200841D13 /* USACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USACell.h; sourceTree = "<group>"; };
@@ -448,6 +454,10 @@
 				C73252D119D6B92100CCB778 /* TopViewController.m */,
 				C76884D719EBD859003F5C80 /* TopModel.h */,
 				C76884D819EBD859003F5C80 /* TopModel.m */,
+				C7F651B619ECBAC4003508F7 /* TopCell.h */,
+				C7F651B719ECBAC4003508F7 /* TopCell.m */,
+				C7F651B919ECEFF5003508F7 /* TopView.h */,
+				C7F651BA19ECEFF5003508F7 /* TopView.m */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -880,6 +890,7 @@
 			files = (
 				C73252D219D6B92100CCB778 /* TopViewController.m in Sources */,
 				C73252D819D6B93600CCB778 /* MoreViewController.m in Sources */,
+				C7F651B819ECBAC4003508F7 /* TopCell.m in Sources */,
 				C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */,
 				C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */,
 				C7F9A42119E4D9E600841D13 /* SDWebImageManager.m in Sources */,
@@ -895,6 +906,7 @@
 				C73252D519D6B92D00CCB778 /* NewsViewController.m in Sources */,
 				C726729619D7DF7D008A6AA9 /* ItemView.m in Sources */,
 				C73251D719D6B4C800CCB778 /* AppDelegate.m in Sources */,
+				C7F651BB19ECEFF5003508F7 /* TopView.m in Sources */,
 				C7F9A42219E4D9E600841D13 /* UIImageView+WebCache.m in Sources */,
 				C73251D419D6B4C800CCB778 /* main.m in Sources */,
 				C76884D919EBD859003F5C80 /* TopModel.m in Sources */,
