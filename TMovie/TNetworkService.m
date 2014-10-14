@@ -35,4 +35,9 @@
 {
     return [[self parserData:@"movie_list.json"] objectForKey:@"entries"];
 }
+
++ (id)cinemaData
+{
+    return [self parserData:@"readyMovie.json"];
+}
 @end

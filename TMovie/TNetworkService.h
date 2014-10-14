@@ -16,4 +16,6 @@
 
 + (id)topData;
 
++ (id)cinemaData;
+
 @end

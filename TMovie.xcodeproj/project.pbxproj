@@ -132,6 +132,8 @@
 		C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A228DC19E3E77500640004 /* TNetworkService.m */; };
 		C7F651B819ECBAC4003508F7 /* TopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F651B719ECBAC4003508F7 /* TopCell.m */; };
 		C7F651BB19ECEFF5003508F7 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F651BA19ECEFF5003508F7 /* TopView.m */; };
+		C7F651BD19ED1FC6003508F7 /* readyMovie.json in Resources */ = {isa = PBXBuildFile; fileRef = C7F651BC19ED1FC6003508F7 /* readyMovie.json */; };
+		C7F651C019ED31DE003508F7 /* CinemaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F651BF19ED31DE003508F7 /* CinemaModel.m */; };
 		C7F9A40E19E4CCA700841D13 /* USAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A40D19E4CCA700841D13 /* USAModel.m */; };
 		C7F9A41119E4D14200841D13 /* USACell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41019E4D14200841D13 /* USACell.m */; };
 		C7F9A41F19E4D9E600841D13 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9A41419E4D9E600841D13 /* SDImageCache.m */; };
@@ -298,6 +300,9 @@
 		C7F651B719ECBAC4003508F7 /* TopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopCell.m; sourceTree = "<group>"; };
 		C7F651B919ECEFF5003508F7 /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
 		C7F651BA19ECEFF5003508F7 /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
+		C7F651BC19ED1FC6003508F7 /* readyMovie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = readyMovie.json; sourceTree = "<group>"; };
+		C7F651BE19ED31DE003508F7 /* CinemaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaModel.h; sourceTree = "<group>"; };
+		C7F651BF19ED31DE003508F7 /* CinemaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaModel.m; sourceTree = "<group>"; };
 		C7F9A40C19E4CCA700841D13 /* USAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAModel.h; sourceTree = "<group>"; };
 		C7F9A40D19E4CCA700841D13 /* USAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAModel.m; sourceTree = "<group>"; };
 		C7F9A40F19E4D14200841D13 /* USACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USACell.h; sourceTree = "<group>"; };
@@ -367,8 +372,8 @@
 		C73251D019D6B4C800CCB778 /* TMovie */ = {
 			isa = PBXGroup;
 			children = (
-				C73251F719D6B8BC00CCB778 /* Cinema */,
 				C73251F819D6B8BC00CCB778 /* More */,
+				C73251F719D6B8BC00CCB778 /* Cinema */,
 				C73251FA19D6B8BC00CCB778 /* Top */,
 				C73251F919D6B8BC00CCB778 /* News */,
 				C73251FB19D6B8BC00CCB778 /* USA */,
@@ -423,6 +428,8 @@
 			children = (
 				C73252D919D6B94000CCB778 /* CinemaViewController.h */,
 				C73252DA19D6B94000CCB778 /* CinemaViewController.m */,
+				C7F651BE19ED31DE003508F7 /* CinemaModel.h */,
+				C7F651BF19ED31DE003508F7 /* CinemaModel.m */,
 			);
 			path = Cinema;
 			sourceTree = "<group>";
@@ -651,6 +658,7 @@
 				C7A228D819E3E72500640004 /* NorthUSA.json */,
 				C76884D019EB75B3003F5C80 /* movie_list.json */,
 				C76884D119EB75B3003F5C80 /* news_list.json */,
+				C7F651BC19ED1FC6003508F7 /* readyMovie.json */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -856,6 +864,7 @@
 				C732528619D6B8CE00CCB778 /* tab_bg_all.png in Resources */,
 				C732529D19D6B8CE00CCB778 /* more_search.png in Resources */,
 				C732527C19D6B8CE00CCB778 /* Default@2x.png in Resources */,
+				C7F651BD19ED1FC6003508F7 /* readyMovie.json in Resources */,
 				C73252A219D6B8CE00CCB778 /* more@2x.png in Resources */,
 				C732527F19D6B8CE00CCB778 /* Icon@2x.png in Resources */,
 				C726729219D7B77F008A6AA9 /* top@2x.png in Resources */,
@@ -894,6 +903,7 @@
 				C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */,
 				C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */,
 				C7F9A42119E4D9E600841D13 /* SDWebImageManager.m in Sources */,
+				C7F651C019ED31DE003508F7 /* CinemaModel.m in Sources */,
 				C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */,
 				C7F9A41F19E4D9E600841D13 /* SDImageCache.m in Sources */,
 				C73252DB19D6B94000CCB778 /* CinemaViewController.m in Sources */,

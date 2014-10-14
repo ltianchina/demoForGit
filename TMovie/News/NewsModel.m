@@ -10,4 +10,18 @@
 
 @implementation NewsModel
 
+//@property (nonatomic, retain) NSNumber *id;
+//@property (nonatomic, retain) NSNumber *type;
+//@property (nonatomic, copy) NSString *title;
+//@property (nonatomic, copy) NSString *summary;
+//@property (nonatomic, copy) NSString *image;
+- (void)dealloc
+{
+    self.id    = nil;
+    self.type  = nil;
+    self.title = nil;
+    self.summary = nil;
+    self.image = nil;
+    [super dealloc];
+}
 @end
