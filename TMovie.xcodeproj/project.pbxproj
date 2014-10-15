@@ -125,6 +125,7 @@
 		C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0F19D7A2240086E10F /* UIViewExt.m */; };
 		C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74EF34E19E630E10016BBB5 /* RatingView.m */; };
 		C762FF3719EE14F8000530C4 /* CinemaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C762FF3619EE14F8000530C4 /* CinemaCell.m */; };
+		C762FF3A19EE4D29000530C4 /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = C762FF3919EE4D29000530C4 /* MoreView.m */; };
 		C76884D219EB75B3003F5C80 /* movie_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D019EB75B3003F5C80 /* movie_list.json */; };
 		C76884D319EB75B3003F5C80 /* news_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D119EB75B3003F5C80 /* news_list.json */; };
 		C76884D619EB8096003F5C80 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76884D519EB8096003F5C80 /* NewsModel.m */; };
@@ -290,6 +291,8 @@
 		C74EF34E19E630E10016BBB5 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 		C762FF3519EE14F8000530C4 /* CinemaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaCell.h; sourceTree = "<group>"; };
 		C762FF3619EE14F8000530C4 /* CinemaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaCell.m; sourceTree = "<group>"; };
+		C762FF3819EE4D29000530C4 /* MoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreView.h; sourceTree = "<group>"; };
+		C762FF3919EE4D29000530C4 /* MoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreView.m; sourceTree = "<group>"; };
 		C76884D019EB75B3003F5C80 /* movie_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_list.json; sourceTree = "<group>"; };
 		C76884D119EB75B3003F5C80 /* news_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_list.json; sourceTree = "<group>"; };
 		C76884D419EB8096003F5C80 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
@@ -444,6 +447,8 @@
 			children = (
 				C73252D619D6B93600CCB778 /* MoreViewController.h */,
 				C73252D719D6B93600CCB778 /* MoreViewController.m */,
+				C762FF3819EE4D29000530C4 /* MoreView.h */,
+				C762FF3919EE4D29000530C4 /* MoreView.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -908,6 +913,7 @@
 				C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */,
 				C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */,
 				C7F9A42119E4D9E600841D13 /* SDWebImageManager.m in Sources */,
+				C762FF3A19EE4D29000530C4 /* MoreView.m in Sources */,
 				C7F651C019ED31DE003508F7 /* CinemaModel.m in Sources */,
 				C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */,
 				C7F9A41F19E4D9E600841D13 /* SDImageCache.m in Sources */,

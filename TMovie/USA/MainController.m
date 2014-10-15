@@ -13,6 +13,7 @@
 #import "CinemaViewController.h"
 #import "MoreViewController.h"
 #import "BaseNavController.h"
+
 @interface MainController ()
 
 @end
@@ -55,16 +56,12 @@
     BaseNavController *cinemaNavController = [[BaseNavController alloc] initWithRootViewController:cinemaViewController];
     [cinemaViewController release];
     
-    MoreViewController *moreViewController = [[MoreViewController alloc] init];
-    BaseNavController *moreNavController = [[BaseNavController alloc] initWithRootViewController:moreViewController];
-    [moreViewController release];
     
-    NSArray *viewControllers = @[usaNavController,newsNavController,topNavController,cinemaNavController,moreNavController];
+    NSArray *viewControllers = @[usaNavController,newsNavController,topNavController,cinemaNavController];
     [usaNavController release];
     [newsNavController release];
     [topNavController release];
     [cinemaNavController release];
-    [moreNavController release];
     
     [self setViewControllers:viewControllers animated:YES];
 }
@@ -98,13 +95,36 @@
 }
 
 #pragma -mark Target-Action
-- (void)clickedItemView:(NSInteger)index
+int lastIndex = 0;
+
+- (void)changeItemView:(NSInteger) index
 {
+    int loaction = (index == 4 && [_moreView superview]) ? lastIndex:index;
+    if (index >= 4 && _moreView == nil) {
+        _moreView = [[MoreView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight-45)];
+        _moreView.delegate = self;
+        _moreView.tag = index;
+        [self.view addSubview:_moreView];
+    } else {
+        [_moreView removeFromSuperview];
+        [_moreView release],_moreView = nil;
+        self.selectedIndex = loaction;
+    }
+    
     [UIView beginAnimations:nil context:NULL];
-    _selectedImage.frame = CGRectMake( (_selectedImage.width+10)*index, _customTabbarBG.height/2.0-55.0/2, (kDeviceWidth-6*8)/5, 45);
+    _selectedImage.frame = CGRectMake( (_selectedImage.width+10)*loaction, _customTabbarBG.height/2.0-55.0/2, (kDeviceWidth-6*8)/5, 45);
     [UIView commitAnimations];
     
-    self.selectedIndex = index;
+    lastIndex = (index == 4) ? lastIndex : index;
+}
+- (void)clickedItemView:(NSInteger)index
+{
+    [self changeItemView:index];
+}
+
+- (void)didViewControllerBackground:(NSInteger)index
+{
+    [self changeItemView:index];
 }
 #pragma -mark Memory
 - (void)didReceiveMemoryWarning {

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ItemView.h"
+#import "MoreView.h"
 
-@interface MainController : UITabBarController<ItemViewDelegate>
+@interface MainController : UITabBarController<ItemViewDelegate,MoreViewDelegate>
 {
 @private
     UIImageView *_customTabbarBG;
     UIImageView *_selectedImage;
+    MoreView    *_moreView;
 }
 @end
