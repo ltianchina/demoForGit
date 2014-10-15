@@ -124,6 +124,7 @@
 		C73D4B0B19D793990086E10F /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0A19D793990086E10F /* BaseNavController.m */; };
 		C73D4B1019D7A2240086E10F /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D4B0F19D7A2240086E10F /* UIViewExt.m */; };
 		C74EF34F19E630E10016BBB5 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74EF34E19E630E10016BBB5 /* RatingView.m */; };
+		C762FF3719EE14F8000530C4 /* CinemaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C762FF3619EE14F8000530C4 /* CinemaCell.m */; };
 		C76884D219EB75B3003F5C80 /* movie_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D019EB75B3003F5C80 /* movie_list.json */; };
 		C76884D319EB75B3003F5C80 /* news_list.json in Resources */ = {isa = PBXBuildFile; fileRef = C76884D119EB75B3003F5C80 /* news_list.json */; };
 		C76884D619EB8096003F5C80 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C76884D519EB8096003F5C80 /* NewsModel.m */; };
@@ -287,6 +288,8 @@
 		C73D4B0F19D7A2240086E10F /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		C74EF34D19E630E10016BBB5 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
 		C74EF34E19E630E10016BBB5 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
+		C762FF3519EE14F8000530C4 /* CinemaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaCell.h; sourceTree = "<group>"; };
+		C762FF3619EE14F8000530C4 /* CinemaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaCell.m; sourceTree = "<group>"; };
 		C76884D019EB75B3003F5C80 /* movie_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_list.json; sourceTree = "<group>"; };
 		C76884D119EB75B3003F5C80 /* news_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_list.json; sourceTree = "<group>"; };
 		C76884D419EB8096003F5C80 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
@@ -430,6 +433,8 @@
 				C73252DA19D6B94000CCB778 /* CinemaViewController.m */,
 				C7F651BE19ED31DE003508F7 /* CinemaModel.h */,
 				C7F651BF19ED31DE003508F7 /* CinemaModel.m */,
+				C762FF3519EE14F8000530C4 /* CinemaCell.h */,
+				C762FF3619EE14F8000530C4 /* CinemaCell.m */,
 			);
 			path = Cinema;
 			sourceTree = "<group>";
@@ -921,6 +926,7 @@
 				C73251D419D6B4C800CCB778 /* main.m in Sources */,
 				C76884D919EBD859003F5C80 /* TopModel.m in Sources */,
 				C7F9A40E19E4CCA700841D13 /* USAModel.m in Sources */,
+				C762FF3719EE14F8000530C4 /* CinemaCell.m in Sources */,
 				C73D4B0B19D793990086E10F /* BaseNavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

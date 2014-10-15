@@ -9,19 +9,14 @@
 #import "CinemaModel.h"
 
 @implementation CinemaModel
-//@private
-//UIImageView *_imageView;
-//UILabel     *_titleLabel;
-//UILabel     *_typeLabel;
-//UILabel     *_directorLabel;
-//}
 
 - (void)dealloc
 {
-    self.imageView = nil;
-    self.titleLabel = nil;
-    self.typeLabel = nil;
-    self.directorLabel = nil;
+    self.image = nil;
+    self.title = nil;
+    self.type = nil;
+    self.director = nil;
+    self.releaseDate = nil;
     [super dealloc];
 }
 @end

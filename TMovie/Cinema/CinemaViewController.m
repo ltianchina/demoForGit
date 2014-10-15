@@ -8,6 +8,8 @@
 
 #import "CinemaViewController.h"
 #import "TNetworkService.h"
+#import "CinemaCell.h"
+#import "CinemaModel.h"
 
 @interface CinemaViewController ()
 
@@ -50,7 +52,22 @@
 #pragma -mark Private Methods
 - (void)requestData
 {
-    _cinemaDataArr = [[TNetworkService cinemaData] retain];
+    NSArray *data = [TNetworkService cinemaData];
+    
+    _cinemaDataArr = [[NSMutableArray alloc] initWithCapacity:data.count];
+    
+    for (NSDictionary *dicData in data) {
+        CinemaModel *cinemaModel = [[CinemaModel alloc] init];
+
+        cinemaModel.image = [dicData objectForKey:@"image"];
+        cinemaModel.title = [dicData objectForKey:@"title"];
+        cinemaModel.type = [dicData objectForKey:@"type"];
+        cinemaModel.director = [dicData objectForKey:@"director"];
+        cinemaModel.releaseDate = [dicData objectForKey:@"releaseDate"];
+        
+        [_cinemaDataArr addObject:cinemaModel];
+        [cinemaModel release];
+    }
     
     [self refreshUI];
 }
@@ -71,13 +88,13 @@
 {
     static NSString *cellIdentifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CinemaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[CinemaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = @"test";
+    cell.cinemaModel = _cinemaDataArr[indexPath.row];
     return cell;
 }
 
