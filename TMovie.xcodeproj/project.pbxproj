@@ -133,6 +133,7 @@
 		C7A228D919E3E72500640004 /* NorthUSA.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A228D819E3E72500640004 /* NorthUSA.json */; };
 		C7A228DD19E3E77500640004 /* TNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A228DC19E3E77500640004 /* TNetworkService.m */; };
 		C7F3D00B19EF69FA00616C18 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F3D00A19EF69FA00616C18 /* QuartzCore.framework */; };
+		C7F3D01119EFCBC500616C18 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F3D01019EFCBC500616C18 /* AlbumViewController.m */; };
 		C7F651B819ECBAC4003508F7 /* TopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F651B719ECBAC4003508F7 /* TopCell.m */; };
 		C7F651BB19ECEFF5003508F7 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F651BA19ECEFF5003508F7 /* TopView.m */; };
 		C7F651BD19ED1FC6003508F7 /* readyMovie.json in Resources */ = {isa = PBXBuildFile; fileRef = C7F651BC19ED1FC6003508F7 /* readyMovie.json */; };
@@ -304,6 +305,8 @@
 		C7A228DB19E3E77500640004 /* TNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNetworkService.h; sourceTree = "<group>"; };
 		C7A228DC19E3E77500640004 /* TNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNetworkService.m; sourceTree = "<group>"; };
 		C7F3D00A19EF69FA00616C18 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C7F3D00F19EFCBC500616C18 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		C7F3D01019EFCBC500616C18 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		C7F651B619ECBAC4003508F7 /* TopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopCell.h; sourceTree = "<group>"; };
 		C7F651B719ECBAC4003508F7 /* TopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopCell.m; sourceTree = "<group>"; };
 		C7F651B919ECEFF5003508F7 /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
@@ -464,6 +467,8 @@
 				C73252D419D6B92D00CCB778 /* NewsViewController.m */,
 				C76884D419EB8096003F5C80 /* NewsModel.h */,
 				C76884D519EB8096003F5C80 /* NewsModel.m */,
+				C7F3D00F19EFCBC500616C18 /* AlbumViewController.h */,
+				C7F3D01019EFCBC500616C18 /* AlbumViewController.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -927,6 +932,7 @@
 				C73252CF19D6B91400CCB778 /* USAViewController.m in Sources */,
 				C7F9A42019E4D9E600841D13 /* SDWebImageDownloader.m in Sources */,
 				C73252DE19D6B99800CCB778 /* MainController.m in Sources */,
+				C7F3D01119EFCBC500616C18 /* AlbumViewController.m in Sources */,
 				C76884D619EB8096003F5C80 /* NewsModel.m in Sources */,
 				C73252D519D6B92D00CCB778 /* NewsViewController.m in Sources */,
 				C726729619D7DF7D008A6AA9 /* ItemView.m in Sources */,

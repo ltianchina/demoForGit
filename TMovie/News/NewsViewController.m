@@ -10,6 +10,7 @@
 #import "TNetworkService.h"
 #import "NewsModel.h"
 #import "ItemView.h"
+#import "AlbumViewController.h"
 
 @interface NewsViewController ()
 
@@ -165,6 +166,22 @@
     return cell;
 }
 
+#pragma -mark TableView Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NewsModel *newsModel = _newsDataArr[indexPath.row+1];
+    
+    int selectRowType = [newsModel.type intValue];
+    
+    if (selectRowType == kEmptyImageView) {
+    } else if (selectRowType == kImageView) {
+        AlbumViewController *albumViewController = [[AlbumViewController alloc] init];
+        [self.navigationController pushViewController:albumViewController animated:YES];
+        [albumViewController release];
+    } else {
+        
+    }
+}
 #pragma -mark Memory
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
