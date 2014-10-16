@@ -7,6 +7,7 @@
 //
 
 #import "MoreView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MoreView
 
@@ -24,6 +25,7 @@
         
         _moreTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, _popImageView.width, _popImageView.height) style:UITableViewStylePlain];
         _moreTableView.scrollEnabled = NO;
+        _moreTableView.layer.cornerRadius = 5;
         _moreTableView.dataSource = self;
         _moreTableView.delegate = self;
         [_popImageView addSubview:_moreTableView];
@@ -74,6 +76,14 @@
     }
     
     return cell;
+}
+
+#pragma -mark TableView Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate respondsToSelector:@selector(didSelectTableViewIndex:)]) {
+        [self.delegate didSelectTableViewIndex:indexPath.row];
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

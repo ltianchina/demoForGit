@@ -126,6 +126,57 @@ int lastIndex = 0;
 {
     [self changeItemView:index];
 }
+
+- (void)didSelectTableViewIndex:(NSInteger)index
+{
+    if (_moreView.superview) {
+        [_moreView removeFromSuperview];
+        [_moreView release], _moreView = nil;
+    }
+    
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:self.viewControllers];
+    
+    if (self.viewControllers.count >= 5) {
+        [viewControllers removeLastObject];
+    }
+    int selectRow = index;
+    
+    MoreViewController *moreVC = nil;
+    
+    switch (selectRow) {
+        case 0:
+            moreVC = [[MoreViewController alloc] init];
+            moreVC.title = @"搜索";
+            break;
+        
+        case 1:
+            moreVC = [[MoreViewController alloc] init];
+            moreVC.title = @"收藏";
+            break;
+            
+        case 2:
+            moreVC = [[MoreViewController alloc] init];
+            moreVC.title = @"设置";
+            break;
+            
+        case 3:
+            moreVC = [[MoreViewController alloc] init];
+            moreVC.title = @"关于";
+            break;
+            
+        default:
+            break;
+    }
+    BaseNavController *moreNav = [[BaseNavController alloc] initWithRootViewController:moreVC];
+    
+    [viewControllers addObject:moreNav];
+    [moreVC release];
+    [moreNav release];
+    [self setViewControllers:viewControllers animated:YES];
+    
+    self.selectedIndex = 4;
+    lastIndex = 4;
+}
 #pragma -mark Memory
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

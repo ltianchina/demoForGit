@@ -12,6 +12,8 @@
 
 - (void)didViewControllerBackground:(NSInteger) index;
 
+- (void)didSelectTableViewIndex:(NSInteger)index;
+
 @end
 @interface MoreView : UIView <UITableViewDataSource,UITableViewDelegate>
 {
